@@ -16,7 +16,7 @@ app.use((err, req, res, next) => {
 
 (async () => {
   try {
-    await mongoose.connect("mongodb+srv://harshs893:Hks_8999@cluster0.igm71gc.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+    await mongoose.connect("process.env.MONGODB_URL", { useNewUrlParser: true, useUnifiedTopology: true });
     console.log("Database connected!");
   } catch (error) {
     console.error("Error connecting to database: ", error);
