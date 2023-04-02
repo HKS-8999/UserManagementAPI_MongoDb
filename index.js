@@ -13,14 +13,15 @@ app.use((err, req, res, next) => {
   });
 });
 
-await mongoose.connect(
-  "mongodb+srv://harshs893:Hks_8999@cluster0.igm71gc.mongodb.net/?retryWrites=true&w=majority"
-);
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function () {
-  console.log("Database connected!");
-});
+
+(async () => {
+  try {
+    await mongoose.connect("mongodb+srv://harshs893:Hks_8999@cluster0.igm71gc.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+    console.log("Database connected!");
+  } catch (error) {
+    console.error("Error connecting to database: ", error);
+  }
+})();
 
 const userSchema = new mongoose.Schema({
   email: String,
