@@ -1,5 +1,5 @@
 {
-  "name": "tutorial5",
+  "name": "tutorial7",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,5 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^7.0.3",
-    "nanoid": "^4.0.1"
-  }
+    "mongoose": "^5.11.97"  }
 }
